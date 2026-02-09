@@ -37,63 +37,66 @@ export const pricingConfig: {
         entities: 4
       },
       features: [
-        'Connect 1 GitHub repository',
-        'Up to 4 auto-generated posts per month',
-        'Basic public changelog page',
-        'Manual approval before posting',
-        'ShipLog branding on changelog',
-        'Streak tracking'
+        '1 GitHub repo connected',
+        'Up to 4 posts per month',
+        'Basic changelog page with ShipLog branding',
+        'Manual review & approve workflow',
+        'Streak counter',
+        'Community support'
       ],
       cta: 'Get Started Free',
     },
     {
       id: 'starter',
       name: 'Starter',
-      description: 'For indie hackers serious about building in public',
-      price: { monthly: 12, yearly: 108 },
+      description: 'For indie hackers serious about consistency',
+      price: { monthly: 9, yearly: 79 },
       priceId: process.env.STRIPE_PRICE_STARTER,
       limits: {
-        entities: 30
+        entities: 20
       },
       features: [
         'Unlimited GitHub repos',
-        'Up to 30 auto-generated posts per month',
-        'Voice learning from 200 past tweets',
+        'Up to 20 posts per month',
+        'Voice learning from 100 past tweets',
         'Auto-posting to X/Twitter',
-        'Custom branded changelog page',
-        'Streak tracking & milestone badges',
-        'Smart commit filtering',
-        'Basic engagement analytics'
+        'Custom domain changelog page',
+        'Remove ShipLog branding',
+        'Basic engagement analytics',
+        'Email support'
       ],
-      highlighted: true,
-      cta: 'Start Building',
+      cta: 'Start 7-Day Trial',
     },
     {
       id: 'pro',
       name: 'Pro',
-      description: 'Full autopilot for prolific builders',
-      price: { monthly: 24, yearly: 228 },
+      description: 'Full automation for prolific builders',
+      price: { monthly: 19, yearly: 169 },
       priceId: process.env.STRIPE_PRICE_PRO,
       limits: {
         entities: -1
       },
       features: [
         'Everything in Starter',
-        'Unlimited auto-generated posts',
-        'Multi-platform posting (X, LinkedIn, Bluesky)',
-        'Weekly & monthly digest generation',
-        'Custom domain for changelog page',
-        'Priority voice model training',
+        'Unlimited posts',
+        'Full voice learning from entire tweet history',
+        'Auto-post to X, LinkedIn & Mastodon',
+        'Stripe revenue milestone posts',
+        'Vercel & Railway deployment logs',
+        'Weekly digest auto-generation',
         'Advanced analytics & engagement tracking',
-        'API access'
+        'Custom changelog themes',
+        'Priority AI processing',
+        'Priority support'
       ],
-      cta: 'Go Pro',
+      highlighted: true,
+      cta: 'Start 7-Day Trial',
     },
     {
       id: 'team',
       name: 'Team',
-      description: 'For small teams shipping together in public',
-      price: { monthly: 49, yearly: 468 },
+      description: 'Build in public as a team',
+      price: { monthly: 49, yearly: 449 },
       priceId: process.env.STRIPE_PRICE_TEAM,
       limits: {
         entities: -1
@@ -101,12 +104,13 @@ export const pricingConfig: {
       features: [
         'Everything in Pro',
         'Up to 5 team members',
-        'Shared product changelog',
-        'Editorial approval workflows',
-        'White-label changelog embeds',
+        'Shared changelog with contributor attribution',
+        'Team review & approval workflow',
+        'Org-level GitHub integration',
+        'API access',
         'Dedicated support'
       ],
-      cta: 'Start Team Plan',
+      cta: 'Contact Us',
     }
   ],
 }

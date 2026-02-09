@@ -1,4 +1,4 @@
-import { BookOpen } from 'lucide-react'
+import { FileText } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 export type FieldType =
@@ -44,10 +44,10 @@ export interface EntityConfig {
 }
 
 export const entityConfig: EntityConfig = {
-  name: 'BuildJournalEntry',
-  pluralName: 'BuildJournalEntries',
-  slug: 'build_journal_entries',
-  icon: BookOpen,
+  name: 'Post',
+  pluralName: 'Posts',
+  slug: 'posts',
+  icon: FileText,
 
   fields: [
     {
@@ -64,16 +64,8 @@ export const entityConfig: EntityConfig = {
       label: 'Content',
       type: 'rich-text',
       required: true,
-      placeholder: 'Generated build journal post content',
-      showInList: true,
-      showInForm: true,
-    },
-    {
-      name: 'generated_date',
-      label: 'Generated Date',
-      type: 'date',
-      required: true,
-      showInList: true,
+      placeholder: 'Generated post content — edit before publishing',
+      showInList: false,
       showInForm: true,
     },
     {
@@ -81,8 +73,24 @@ export const entityConfig: EntityConfig = {
       label: 'Status',
       type: 'select',
       required: true,
-      options: ['draft', 'scheduled', 'published', 'archived'],
+      options: ['draft', 'scheduled', 'published'],
       defaultValue: 'draft',
+      showInList: true,
+      showInForm: true,
+    },
+    {
+      name: 'generation_date',
+      label: 'Generation Date',
+      type: 'datetime',
+      required: true,
+      showInList: true,
+      showInForm: false,
+    },
+    {
+      name: 'scheduled_publish_date',
+      label: 'Scheduled Publish Date',
+      type: 'datetime',
+      required: false,
       showInList: true,
       showInForm: true,
     },
@@ -96,20 +104,11 @@ export const entityConfig: EntityConfig = {
       showInForm: true,
     },
     {
-      name: 'social_media_platform',
-      label: 'Social Media Platform',
-      type: 'multi-select',
-      required: false,
-      options: ['X', 'LinkedIn', 'Bluesky', 'Dev.to'],
-      showInList: false,
-      showInForm: true,
-    },
-    {
       name: 'public_url',
       label: 'Public URL',
       type: 'url',
       required: false,
-      placeholder: 'https://shiplog.dev/you/day-14',
+      placeholder: 'https://shiplog.dev/you/post-slug',
       showInList: false,
       showInForm: true,
     }
@@ -117,7 +116,7 @@ export const entityConfig: EntityConfig = {
 
   titleField: 'title',
   descriptionField: 'content',
-  defaultSort: { field: 'generated_date', direction: 'desc' },
+  defaultSort: { field: 'generation_date', direction: 'desc' },
 
   allowCreate: true,
   allowEdit: true,

@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'ShipLog - Build in public on autopilot — from commits to content',
+  title: 'ShipLog - Your commits write your build-in-public posts',
   description: 'Auto-generate authentic build-in-public posts and changelogs from your GitHub commits using AI voice matching.',
 };
 

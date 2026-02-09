@@ -1,4 +1,4 @@
-import { GitCommit, Fingerprint, Calendar, Globe, Flame, Filter } from 'lucide-react'
+import { GitCommit, Mic, Filter, Calendar, Globe, Flame } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 export interface NavItem {
@@ -56,7 +56,7 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   name: 'ShipLog',
-  tagline: 'Build in public on autopilot — from commits to content',
+  tagline: 'Your commits write your build-in-public posts',
   description: 'Auto-generate authentic build-in-public posts and changelogs from your GitHub commits using AI voice matching.',
   url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
   company: 'ShipLog',
@@ -70,58 +70,59 @@ export const siteConfig: SiteConfig = {
 
   dashboardNav: [
     { title: 'Dashboard', href: '/dashboard' },
-    { title: 'Journal Entries', href: '/dashboard/entities' },
-    { title: 'Connected Repos', href: '/dashboard/repos' },
+    { title: 'Posts', href: '/dashboard/entities' },
+    { title: 'Repositories', href: '/dashboard/repositories' },
+    { title: 'Changelog Page', href: '/dashboard/changelog' },
     { title: 'Voice Settings', href: '/dashboard/voice' },
-    { title: 'Schedule', href: '/dashboard/schedule' }
+    { title: 'Integrations', href: '/dashboard/integrations' }
   ],
 
   hero: {
-    badge: 'Build in Public, Effortlessly',
-    headline: 'Turn Your Commits Into Build-in-Public Content',
-    headlineHighlight: 'Build-in-Public Content',
-    subheadline: 'ShipLog connects to your GitHub and automatically generates authentic, voice-matched social media posts from your commits and PRs. Maintain your build-in-public streak without the midnight content grind.',
-    primaryCta: { text: 'Start Shipping Free', href: '/register' },
-    secondaryCta: { text: 'See How It Works', href: '/features' },
-    socialProof: { text: 'Trusted by 1,200+ indie hackers building in public', rating: '4.9/5' },
+    badge: 'Stop writing tweets at midnight',
+    headline: 'Your Commits Write Your Build-in-Public Posts',
+    headlineHighlight: 'Build-in-Public',
+    subheadline: 'ShipLog connects to your GitHub and automatically transforms your commits, PRs, and deployments into engaging social posts that sound like you. Maintain your build-in-public streak without ever context-switching from code to content.',
+    primaryCta: { text: 'Connect GitHub Free', href: '/register' },
+    secondaryCta: { text: 'See Example Posts', href: '/features' },
+    socialProof: { text: 'Trusted by 1,200+ indie hackers shipping in public', rating: '4.9/5' },
   },
 
   features: [
     {
       icon: GitCommit,
       title: 'Commit-to-Content Pipeline',
-      description: 'Automatically transform your GitHub commits, PRs, and deployment events into narrative build-in-public posts — no manual writing required.',
+      description: 'Connect your GitHub repos and ShipLog automatically ingests commits, merged PRs, and deployment logs to generate narrative-style build-in-public posts.',
       gradient: 'from-violet-500 to-purple-500',
     },
     {
-      icon: Fingerprint,
-      title: 'Voice Matching AI',
-      description: 'ShipLog learns your writing style from your past tweets so every generated post sounds like you, not a robot.',
-      gradient: 'from-orange-500 to-red-500',
-    },
-    {
-      icon: Calendar,
-      title: 'Auto-Schedule & Post',
-      description: 'Set your preferred posting schedule and ShipLog publishes to X, LinkedIn, and Bluesky on autopilot while you sleep.',
-      gradient: 'from-cyan-500 to-blue-500',
-    },
-    {
-      icon: Globe,
-      title: 'Public Build Journal',
-      description: 'Get a beautiful hosted changelog page at shiplog.dev/you — social proof, SEO asset, and portfolio piece in one.',
-      gradient: 'from-emerald-500 to-teal-500',
-    },
-    {
-      icon: Flame,
-      title: 'Streak Tracking & Milestones',
-      description: 'Automatic Day 1, Day 30, Day 100 tracking with milestone badges that keep you motivated and your audience engaged.',
-      gradient: 'from-amber-500 to-orange-500',
+      icon: Mic,
+      title: 'Voice Learning Engine',
+      description: 'ShipLog learns your writing style from your past tweets so every generated post sounds authentically like you — not generic AI slop.',
+      gradient: 'from-blue-500 to-cyan-500',
     },
     {
       icon: Filter,
       title: 'Smart Commit Filtering',
-      description: 'AI distinguishes tweet-worthy features and bug fixes from mundane dependency updates and merge commits — only the good stuff gets shared.',
-      gradient: 'from-pink-500 to-rose-500',
+      description: 'AI distinguishes tweet-worthy work from mundane changes. No more \'updated README\' posts — only the stuff your audience actually cares about.',
+      gradient: 'from-amber-500 to-orange-500',
+    },
+    {
+      icon: Calendar,
+      title: 'Scheduled Auto-Posting',
+      description: 'Code at midnight, post at peak hours. ShipLog queues your approved posts and publishes them when your audience is most active on X, LinkedIn, and Mastodon.',
+      gradient: 'from-emerald-500 to-green-500',
+    },
+    {
+      icon: Globe,
+      title: 'Public Build Journal',
+      description: 'Get a beautiful, SEO-optimized changelog page at shiplog.dev/you that doubles as social proof for your product and ranks for long-tail technical searches.',
+      gradient: 'from-rose-500 to-pink-500',
+    },
+    {
+      icon: Flame,
+      title: 'Streak & Milestone Tracking',
+      description: 'Gamify your build-in-public practice with streak counters, Day 30/100 celebrations, and public accountability — the same psychology that makes GitHub graphs addictive.',
+      gradient: 'from-indigo-500 to-violet-500',
     }
   ],
 
@@ -129,8 +130,8 @@ export const siteConfig: SiteConfig = {
     { name: 'Next.js', color: 'bg-black text-white' },
     { name: 'Supabase', color: 'bg-emerald-600 text-white' },
     { name: 'Stripe', color: 'bg-purple-600 text-white' },
-    { name: 'OpenAI', color: 'bg-gray-800 text-white' },
-    { name: 'GitHub API', color: 'bg-gray-700 text-white' }
+    { name: 'GitHub API', color: 'bg-gray-800 text-white' },
+    { name: 'OpenAI', color: 'bg-teal-600 text-white' }
   ],
 
   footerSections: [
@@ -140,7 +141,7 @@ export const siteConfig: SiteConfig = {
         { title: 'Features', href: '/features' },
         { title: 'Pricing', href: '/pricing' },
         { title: 'Changelog', href: '/blog' },
-        { title: 'Roadmap', href: '/roadmap' }
+        { title: 'Integrations', href: '/features#integrations' }
       ],
     },
     {
@@ -155,7 +156,8 @@ export const siteConfig: SiteConfig = {
       title: 'Legal',
       links: [
         { title: 'Privacy Policy', href: '/privacy' },
-        { title: 'Terms of Service', href: '/terms' }
+        { title: 'Terms of Service', href: '/terms' },
+        { title: 'Data Processing', href: '/dpa' }
       ],
     }
   ],
