@@ -1,17 +1,17 @@
--- Entity Table: BuildJournalEntries
+-- Entity Table: Posts
 -- Auto-generated from IdeaLaunch pipeline
 
 CREATE TABLE IF NOT EXISTS public.entities (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID REFERENCES public.profiles(id) ON DELETE CASCADE NOT NULL,
 
-  -- BuildJournalEntry fields
+  -- Post fields
   title TEXT NOT NULL,
   content TEXT NOT NULL,
-  generated_date DATE NOT NULL,
   status TEXT NOT NULL DEFAULT 'draft',
+  generation_date TIMESTAMPTZ NOT NULL,
+  scheduled_publish_date TIMESTAMPTZ,
   source_commits TEXT[],
-  social_media_platform TEXT[],
   public_url TEXT,
 
   -- Timestamps
